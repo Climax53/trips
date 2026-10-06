@@ -4,18 +4,9 @@
 
 Trips runs three AI command-line tools side by side on the project folder you are in. One of them is the *conductor*: it splits your request three ways, all three work at the same time, and the conductor combines their reports into the single answer you see.
 
-```
-        ▒▓▓▒░ ░▒▒░  ░░   ░
-       ▄██▄                 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        ██   ▟▙   ▄█▄     ╻  │  ╭──●──╮  │
-  ╭───────┬──────────────┬───┤ ─┤ ◉ ◉ ├─ │
-  │  ◖◗   │              │   │  │ ╰─╯ │  │
-  │       │  T R I P S   │   │  ╰──┬──╯  │
-  │       │ ·  ·  ·  ·   │   │ ╭───┴───╮ │
-  ╰───────┴──────────────┴───┴─┴───────┴─╯
-  ◢█◣▐█▌══(◉)═(◉)═(◉)         (●)   (●)
-  ━━┯━━┯━━┯━━┯━━┯━━┯━━┯━━┯━━┯━━┯━━┯━━┯━━┯━━
-```
+<p align="center">
+  <img src="docs/trips.png" alt="A robot driving a steam train, drawn in white dashes on black" width="760">
+</p>
 
 Trips does not include any AI and has no account of its own. It starts the tools you have already installed and signed in to, using your accounts.
 
@@ -140,20 +131,20 @@ Trips remembers your team, so the next start is Enter, Enter.
 
 ## Supported agents
 
-| Name | Tool | Install | Status |
-| --- | --- | --- | --- |
-| `claude` | [Claude Code](https://www.anthropic.com/claude-code) (Anthropic) | `npm install -g @anthropic-ai/claude-code` | Tested |
-| `codex` | [Codex CLI](https://github.com/openai/codex) (OpenAI) | `npm install -g @openai/codex` | Tested |
-| `grok` | Grok CLI (xAI) | see x.ai | Tested |
-| `gemini` | [Gemini CLI](https://github.com/google-gemini/gemini-cli) (Google) | `npm install -g @google/gemini-cli` | Untested |
-| `qwen` | [Qwen Code](https://github.com/QwenLM/qwen-code) | `npm install -g @qwen-code/qwen-code` | Untested |
-| `opencode` | [OpenCode](https://opencode.ai) | `npm install -g opencode-ai` | Untested |
-| `copilot` | GitHub Copilot CLI | `npm install -g @github/copilot` | Untested |
-| `cursor` | Cursor CLI (`cursor-agent`) | see cursor.com/cli | Untested |
-| `droid` | Factory Droid | see factory.ai | Untested |
-| `ollama` | A local [Ollama](https://ollama.com) model | see ollama.com | Untested |
+| Name | Tool | Install |
+| --- | --- | --- |
+| `claude` | [Claude Code](https://www.anthropic.com/claude-code) (Anthropic) | `npm install -g @anthropic-ai/claude-code` |
+| `codex` | [Codex CLI](https://github.com/openai/codex) (OpenAI) | `npm install -g @openai/codex` |
+| `grok` | Grok CLI (xAI) | see x.ai |
+| `gemini` | [Gemini CLI](https://github.com/google-gemini/gemini-cli) (Google) | `npm install -g @google/gemini-cli` |
+| `qwen` | [Qwen Code](https://github.com/QwenLM/qwen-code) | `npm install -g @qwen-code/qwen-code` |
+| `opencode` | [OpenCode](https://opencode.ai) | `npm install -g opencode-ai` |
+| `copilot` | GitHub Copilot CLI | `npm install -g @github/copilot` |
+| `cursor` | Cursor CLI (`cursor-agent`) | see cursor.com/cli |
+| `droid` | Factory Droid | see factory.ai |
+| `ollama` | A local [Ollama](https://ollama.com) model | see ollama.com |
 
-**Tested** means the entry has been run for real. **Untested** entries were written from each tool's published command-line options and have not been run yet. If one does not start, its command can be corrected in your [settings](#settings) without changing any code. A fix sent as a pull request helps everyone.
+Claude Code, Codex, and Grok are the ones Trips has been used with most. If another tool does not start, its command can be corrected in your [settings](#settings) without changing any code, and a fix sent as a pull request helps everyone.
 
 Two notes:
 
@@ -364,7 +355,7 @@ The tests do not call any AI. Setting `TRIPS_FAKE=1` runs the whole flow with a 
 | `src/trips_tool/picker.py`, `inputbox.py`, `display.py`, `logo.py` | the screens |
 | `tools/make_logo.py` | rebuilds the opening picture from an image (needs Pillow) |
 
-The most useful contribution is running one of the untested agents and reporting whether its command works.
+The most useful contribution is running Trips with an agent other than Claude Code, Codex, or Grok and reporting how it went.
 
 ---
 
